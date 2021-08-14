@@ -5,6 +5,6 @@ namespace API.EntityDtos
     public class SafetyDetailDto
     {
         [JsonProperty("Rating")]
-        public decimal Rating { get; set; }
+        public decimal? Rating { get; set; }
     }
 }

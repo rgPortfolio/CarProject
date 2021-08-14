@@ -5,9 +5,9 @@ namespace API.EntityDtos
     public class ExteriorDetailDto
     {
         [JsonProperty("Color")]
-        public string Color { get; set; }
+        public string? Color { get; set; }
 
         [JsonProperty("Rims")]
-        public string Rims { get; set; }
+        public string? Rims { get; set; }
     }
 }
