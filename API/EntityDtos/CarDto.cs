@@ -16,10 +16,11 @@ namespace API.EntityDtos
 		[JsonProperty("Year")]
 		public int Year { get; set; }
 		[JsonProperty("Images")]
-		public List<CarImage>? CarImages { get; set; }
+		public List<CarImageDto>? CarImages { get; set; }
 
         public InteriorDetailDto InteriorDetail { get; set; }
         public ExteriorDetailDto ExteriorDetail { get; set; }
         public EngineDetailDto EngineDetail { get; set;}
         public SafetyDetailDto SafetyDetail { get; set;}
+    }
 }

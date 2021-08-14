@@ -40,7 +40,7 @@ namespace API.Controllers
 
             if (!cars.Any())
             {
-                _logger.Error("No cards were found")
+                _logger.Error("No cards were found");
                 return StatusCode(404, "No Cars were found");
             }
 
@@ -69,7 +69,7 @@ namespace API.Controllers
 
             if (car == null)
             {
-                _logger.Error("No car with  id:{Id} found", id)
+                _logger.Error("No car with  id:{Id} found", id);
                 return StatusCode(404, $"No Car with id:{id} found");
             }
 
@@ -77,21 +77,29 @@ namespace API.Controllers
                 HorsePower = car.Detail.EngineDetail?.HorsePower,
                 Turbo = car.Detail.EngineDetail?.Turbo,
                 Liters = car.Detail.EngineDetail?.Liters
-            }
+            };
 
             var safetyDetailDto = new SafetyDetailDto(){
                 Rating = car.Detail.SafetyDetail?.Rating
-            }
+            };
 
             var interiorDetailDto = new InteriorDetailDto(){
                 Upholstery = car.Detail.InteriorDetail?.Upholstery,
                 SoundSystem = car.Detail.InteriorDetail?.SoundSystem,
                 HasAndroidAutoOrCarPlay = car.Detail.InteriorDetail?.HasAndroidAutoOrCarPlay
-            }
+            };
 
             var exteriorDetailDto = new ExteriorDetailDto(){
                 Color = car.Detail.ExteriorDetail?.Color,
                 Rims = car.Detail.ExteriorDetail?.Rims,
+            };
+
+            var carImagesDto = new List<CarImageDto>(){};
+            foreach (var image in car.CarImages)
+            {
+                string imageBase64Data = Convert.ToBase64String(image.ImageData);
+                string imageDataURL = string.Format("data:image/jpg;base64,{0}", imageBase64Data);
+                carImagesDto.Add(new CarImageDto() {Id = image.Id, ImageDataUrl = imageDataURL});
             }
 
             var carDto = new CarDto() {
@@ -103,7 +111,7 @@ namespace API.Controllers
                 InteriorDetail = interiorDetailDto,
                 SafetyDetail = safetyDetailDto,
                 ExteriorDetail = exteriorDetailDto  
-            }
+            };
 
             return Ok(carDto);
 
