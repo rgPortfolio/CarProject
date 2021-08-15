@@ -35,12 +35,12 @@ export const CarSelect: React.FC = ({}) => {
     setSelectedCar(event.target.value);
   };
 
-  // useEffect(() => {
-  //   async function getCarsFromApi() {
-  //     setCars(await getCars());
-  //   }
-  //   getCarsFromApi();
-  // }, []);
+  useEffect(() => {
+    async function getCarsFromApi() {
+      setCars(await getCars());
+    }
+    getCarsFromApi();
+  }, []);
 
   return (
     <div>
