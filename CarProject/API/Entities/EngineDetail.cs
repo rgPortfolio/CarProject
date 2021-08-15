@@ -1,5 +1,4 @@
 using System;
-using System.ComponentModel.DataAnnotations;
 
 namespace API.Entities
 {
@@ -7,10 +6,10 @@ namespace API.Entities
     {
         public EngineDetail(Guid id, int horsePower, decimal liters, bool turbo)
         {
-            this.Id = id;
-            this.HorsePower = horsePower;
-            this.Liters = liters;
-            this.Turbo = turbo;
+            Id = id;
+            HorsePower = horsePower;
+            Liters = liters;
+            Turbo = turbo;
 
         }
         public Guid Id { get; set; }

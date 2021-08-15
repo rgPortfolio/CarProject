@@ -7,10 +7,10 @@ namespace API.Entities
     {
         public InteriorDetail(Guid id, string upholstery, string soundSystem, bool hasAndroidAutoOrCarPlay)
         {
-            this.Id = id;
-            this.Upholstery = upholstery;
-            this.SoundSystem = soundSystem;
-            this.HasAndroidAutoOrCarPlay = hasAndroidAutoOrCarPlay;
+            Id = id;
+            Upholstery = upholstery;
+            SoundSystem = soundSystem;
+            HasAndroidAutoOrCarPlay = hasAndroidAutoOrCarPlay;
 
         }
         public Guid Id { get; set; }

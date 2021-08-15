@@ -4,9 +4,11 @@ namespace API.Entities
 {
     public class CarImage
     {
-        public CarImage(byte[] imageData)
+        public CarImage(Guid id, byte[] imageData, Guid carId)
         {
+            Id = id;
             ImageData = imageData;
+            CarId = carId;
         }
 
         public Guid Id { get; set;}

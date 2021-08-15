@@ -8,11 +8,11 @@ namespace API.Entities
     {
         public Car(Guid id, string make, string model, int year, Guid detailId)
         {
-            this.Id = id;
-            this.Make = make;
-            this.Model = model;
-            this.Year = year;
-            this.DetailId = detailId;
+            Id = id;
+            Make = make;
+            Model = model;
+            Year = year;
+            DetailId = detailId;
 
         }
         

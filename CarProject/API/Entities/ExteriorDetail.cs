@@ -7,9 +7,9 @@ namespace API.Entities
     {
         public ExteriorDetail(Guid id, string color, string rims)
         {
-            this.Id = id;
-            this.Color = color;
-            this.Rims = rims;
+            Id = id;
+            Color = color;
+            Rims = rims;
 
         }
         public Guid Id { get; set; }

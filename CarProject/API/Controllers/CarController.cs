@@ -22,12 +22,12 @@ namespace API.Controllers
             _db = db;
             _logger = logger;
         }
-
-        [HttpGet]
+        
         /// <summary>
         /// Gets all the cars make model and year
         /// </summary>
         /// <returns>List of CarDto</returns>
+        [HttpGet]
         public async Task<IActionResult> GetCars(){
             //we could use Automapper here to handle conversions automatically
             var cars = await _db.Cars.Select(x =>
@@ -40,22 +40,21 @@ namespace API.Controllers
 
             if (!cars.Any())
             {
-                _logger.Error("No cards were found");
+                _logger.Error("No cars were found");
                 return StatusCode(404, "No Cars were found");
             }
 
             return Ok(cars);
         }
 
-
-        [HttpGet("{id:guid}")]
         /// <summary>
         /// Gets a single cars information including details and photos
         /// </summary>
         /// <param name="id"></param>
         /// <returns>A single Car dto</returns>
+        [HttpGet("{id:guid}")]
         public async Task<IActionResult> GetCar(Guid id){
-            var car = await _db.Cars.Include(x => x.Id == id)
+            var car = await _db.Cars.Where(x => x.Id == id)
                                 .Include(x => x.Detail)
                                 .ThenInclude(y => y.EngineDetail)
                                 .Include(x => x.Detail)
@@ -110,7 +109,8 @@ namespace API.Controllers
                 EngineDetail = engineDetailDto,
                 InteriorDetail = interiorDetailDto,
                 SafetyDetail = safetyDetailDto,
-                ExteriorDetail = exteriorDetailDto  
+                ExteriorDetail = exteriorDetailDto,
+                CarImages = carImagesDto
             };
 
             return Ok(carDto);
