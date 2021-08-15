@@ -7,7 +7,8 @@ I wanted to show a full stack architecture as I envision it. There are some cave
     - Conversely KBB has an open API that look promising, in particular the vehicle section of their api http://developer.kbb.com/#!/idws/1-Default
 - The backend currently does not implement caching of any sort, this could be a resource hog depending on how many photos a car could have (unlimited as of now). I believe implementing something such as Redis would prevent this
 - Normally, I would use a service/repository pattern in the backend. However, I removed it for simplicity
-- Backend tests are written in xunit with fluent assertions and nsubstitute
+- Can use automapper to reduce some of the DTO creation, opted not for simplicity
+
 
 # Frontend
 - The frontend can use more tests. Components are fairly simple but can easily be expanded on
