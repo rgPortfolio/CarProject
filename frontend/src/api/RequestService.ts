@@ -1,7 +1,7 @@
 import { AxiosResponse } from "axios"
 import { CarProjectApi } from './AxiosInstance';
 
-//I implemented this in an enterprise project to standardize how calls from the frontend were made
+//implemented this in an enterprise project to standardize how calls from the frontend were made
 
 export async function get<T>(url: string) {
   return await CarProjectApi.get(url)

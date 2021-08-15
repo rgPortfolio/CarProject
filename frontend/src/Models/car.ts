@@ -9,9 +9,9 @@ export interface Car {
     Make: string
     Model: string
     Year: Number
-    Images: Array<CarImage>
-    InteriorDetail: InteriorDetail
-    ExteriorDetail: ExteriorDetail
-    EngineDetail: EngineDetail
-    SafetyDetail: SafetyDetail
+    Images?: Array<CarImage>
+    InteriorDetail?: InteriorDetail
+    ExteriorDetail?: ExteriorDetail
+    EngineDetail?: EngineDetail
+    SafetyDetail?: SafetyDetail
 }
