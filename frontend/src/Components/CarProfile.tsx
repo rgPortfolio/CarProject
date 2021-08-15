@@ -29,12 +29,12 @@ export const CarProfile: React.FC<CarProfileProps> = ({ id }) => {
   const [car, setCar] = useState({} as Car);
   const classes = useStyles();
 
-//   useEffect(() => {
-//     async function getCarsFromApi() {
-//       setCar(await getCar(id as string));
-//     }
-//     getCarsFromApi();
-//   }, [id]);
+  useEffect(() => {
+    async function getCarsFromApi() {
+      setCar(await getCar(id as string));
+    }
+    getCarsFromApi();
+  }, [id]);
 
 
   return (
