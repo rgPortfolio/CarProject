@@ -12,6 +12,6 @@ I wanted to show a full stack architecture as I envision it. There are some cave
 
 # Frontend
 - The frontend can use more tests. Components are fairly simple but can easily be expanded on
-- Frontend is super simple. You select a car, hit submit, then get taken to a page with some lists
+- Frontend is super simple. You select a car, hit submit, then get taken to a page with some lists (there should be an image carousel as thats what I envisioned, but didn't implement due to scope creep. I most likely would have implemented this one https://github.com/Learus/react-material-ui-carousel)
     - These lists currently do not have sublists but can be easily expanded on since it is built in with MUI
 - The request service has the functionality for the other http methods that the backend does not have. This is to show those as generics
