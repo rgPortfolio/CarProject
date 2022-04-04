@@ -3,7 +3,7 @@ import { API_BASE, CAR_BASE } from "../ApiConstants";
 import { get } from "../RequestService";
 
 export const getCars = async (): Promise<Array<Car>> => {
-  const url = new URL(`${API_BASE}${CAR_BASE}/`);
+  const url = new URL(`${API_BASE}${CAR_BASE}`);
   const response = (await get(url.toString())) as Array<Car>;
   if (response && response?.length > 0) {
     return response;

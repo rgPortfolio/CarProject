@@ -9,7 +9,7 @@ import {
 import React, { useEffect, useState } from "react";
 import { Car } from "../Models/car";
 import { getCars } from "../api/Car/CarService";
-import { Router, Link } from "@reach/router";
+import { Link } from "@reach/router";
 
 const useStyles = makeStyles((theme) => ({
   formControl: {
@@ -25,7 +25,7 @@ const useStyles = makeStyles((theme) => ({
   },
 }));
 
-export const CarSelect: React.FC = ({}) => {
+export const CarSelect: React.FC = () => {
   const classes = useStyles();
 
   const [selectedCar, setSelectedCar] = useState("123456");
